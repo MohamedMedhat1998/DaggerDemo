@@ -8,8 +8,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val farm: Farm = Farm()
-        val river: River = River()
-        val coffee: Coffee = Coffee(farm, river)
+        val coffeeComponent: CoffeeComponent = DaggerCoffeeComponent.create()
+        coffeeComponent.getCoffee()
     }
 }
