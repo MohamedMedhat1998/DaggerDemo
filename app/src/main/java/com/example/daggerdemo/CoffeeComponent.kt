@@ -5,7 +5,7 @@ import dagger.Component
 /**
  * Responsible for providing instances of the [Coffee].
  */
-@Component
+@Component(modules = [CoffeeModule::class])
 interface CoffeeComponent {
     fun getCoffee(): Coffee
 
