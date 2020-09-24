@@ -5,10 +5,15 @@ import dagger.Provides
 
 // We use modules when we can't use @Inject in some class (from a library for e.g.)
 @Module
-class CoffeeModule {
+class CoffeeModule(val sugar: Int) {
 
     @Provides
     fun provideRiver(): River {
         return River()
+    }
+
+    @Provides
+    fun provideSugar(): Int {
+        return sugar
     }
 }
