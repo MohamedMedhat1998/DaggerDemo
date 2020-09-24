@@ -1,5 +1,6 @@
 package com.example.daggerdemo
 
+import android.util.Log
 import javax.inject.Inject
 
 class Coffee @Inject constructor() {
@@ -11,5 +12,10 @@ class Coffee @Inject constructor() {
 
     fun getCoffeeCup(): String {
         return "${farm.getBeans()} + ${river.getWater()}"
+    }
+
+    @Inject
+    fun connectElectricity() {
+        Log.d("Coffee", "Electricity connected")
     }
 }
