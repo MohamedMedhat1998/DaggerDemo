@@ -2,11 +2,12 @@ package com.example.daggerdemo
 
 import dagger.BindsInstance
 import dagger.Component
-import javax.inject.Named
+import javax.inject.Singleton
 
 /**
  * Responsible for providing instances of the [Coffee].
  */
+@Singleton
 @Component(modules = [CoffeeModule::class])
 interface CoffeeComponent {
     fun getCoffee(): Coffee

@@ -11,7 +11,7 @@ class Coffee @Inject constructor(@Sugar val sugar: Int, @Milk val milk: Int) {
     lateinit var river: River
 
     fun getCoffeeCup(): String {
-        return "${farm.getBeans()} + ${river.getWater()} + $sugar + $milk"
+        return "${farm.getBeans()} + ${river.getWater()} + Sugar:$sugar + Milk:$milk\nfarm:$farm"
     }
 
     @Inject
