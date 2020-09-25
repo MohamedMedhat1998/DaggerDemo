@@ -3,7 +3,7 @@ package com.example.daggerdemo
 import android.util.Log
 import javax.inject.Inject
 
-class Coffee @Inject constructor(val sugar: Int) {
+class Coffee @Inject constructor(@Sugar val sugar: Int, @Milk val milk: Int) {
     @Inject
     lateinit var farm: Farm
 
@@ -11,7 +11,7 @@ class Coffee @Inject constructor(val sugar: Int) {
     lateinit var river: River
 
     fun getCoffeeCup(): String {
-        return "${farm.getBeans()} + ${river.getWater()} + $sugar"
+        return "${farm.getBeans()} + ${river.getWater()} + $sugar + $milk"
     }
 
     @Inject

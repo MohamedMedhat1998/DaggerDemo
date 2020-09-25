@@ -2,6 +2,7 @@ package com.example.daggerdemo
 
 import dagger.BindsInstance
 import dagger.Component
+import javax.inject.Named
 
 /**
  * Responsible for providing instances of the [Coffee].
@@ -18,6 +19,9 @@ interface CoffeeComponent {
         fun build(): CoffeeComponent
 
         @BindsInstance
-        fun sugar(sugar: Int): Builder
+        fun sugar(@Sugar sugar: Int): Builder
+
+        @BindsInstance
+        fun milk(@Milk milk: Int): Builder
     }
 }
