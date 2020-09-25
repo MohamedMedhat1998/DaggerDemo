@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val component = DaggerCoffeeComponent.builder().coffeeModule(CoffeeModule(5)).build()
+        val component = DaggerCoffeeComponent.builder().sugar(3).build()
         component.inject(this)
         Log.d("MainActivity", coffee.getCoffeeCup())
     }

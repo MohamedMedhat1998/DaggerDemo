@@ -1,5 +1,6 @@
 package com.example.daggerdemo
 
+import dagger.BindsInstance
 import dagger.Component
 
 /**
@@ -10,4 +11,13 @@ interface CoffeeComponent {
     fun getCoffee(): Coffee
 
     fun inject(mainActivity: MainActivity)
+
+    @Component.Builder
+    interface Builder {
+
+        fun build(): CoffeeComponent
+
+        @BindsInstance
+        fun sugar(sugar: Int): Builder
+    }
 }
