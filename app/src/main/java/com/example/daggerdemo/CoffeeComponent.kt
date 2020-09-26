@@ -7,8 +7,8 @@ import javax.inject.Singleton
 /**
  * Responsible for providing instances of the [Coffee].
  */
-@Singleton
-@Component(modules = [CoffeeModule::class])
+@ActivityScope
+@Component(dependencies = [AppComponent::class])
 interface CoffeeComponent {
     fun getCoffee(): Coffee
 
@@ -24,5 +24,7 @@ interface CoffeeComponent {
 
         @BindsInstance
         fun milk(@Milk milk: Int): Builder
+
+        fun appComponent(appComponent: AppComponent): Builder
     }
 }

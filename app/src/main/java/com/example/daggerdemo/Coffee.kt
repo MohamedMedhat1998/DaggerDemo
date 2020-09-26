@@ -3,6 +3,7 @@ package com.example.daggerdemo
 import android.util.Log
 import javax.inject.Inject
 
+@ActivityScope
 class Coffee @Inject constructor(@Sugar val sugar: Int, @Milk val milk: Int) {
     @Inject
     lateinit var farm: Farm

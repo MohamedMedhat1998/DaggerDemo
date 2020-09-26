@@ -4,10 +4,10 @@ import android.app.Application
 
 class MainApplication : Application() {
 
-    lateinit var coffeeComponent: CoffeeComponent
+    lateinit var appComponent: AppComponent
 
     override fun onCreate() {
         super.onCreate()
-        coffeeComponent = DaggerCoffeeComponent.builder().milk(3).sugar(1).build()
+        appComponent = DaggerAppComponent.create()
     }
 }
