@@ -1,20 +1,19 @@
 package com.example.daggerdemo
 
 import dagger.BindsInstance
-import dagger.Component
-import javax.inject.Singleton
+import dagger.Subcomponent
 
 /**
  * Responsible for providing instances of the [Coffee].
  */
 @ActivityScope
-@Component(dependencies = [AppComponent::class])
+@Subcomponent
 interface CoffeeComponent {
     fun getCoffee(): Coffee
 
     fun inject(mainActivity: MainActivity)
 
-    @Component.Builder
+    @Subcomponent.Builder
     interface Builder {
 
         fun build(): CoffeeComponent
@@ -24,7 +23,5 @@ interface CoffeeComponent {
 
         @BindsInstance
         fun milk(@Milk milk: Int): Builder
-
-        fun appComponent(appComponent: AppComponent): Builder
     }
 }

@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val appComponent = (application as MainApplication).appComponent
         val coffeeComponent =
-            DaggerCoffeeComponent.builder().appComponent(appComponent).sugar(1).milk(4).build()
+            appComponent.getCoffeeComponentBuilder().sugar(1).milk(4).build()
         coffeeComponent.inject(this)
         Log.d("Tracking", "coffee1 $coffee")
         Log.d("Tracking", "coffee2 $coffee2")
